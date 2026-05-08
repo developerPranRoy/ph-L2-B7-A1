@@ -40,22 +40,31 @@ function toggleReadStatus(book: Book): Book & { isRead: boolean } {
   };
 }
 
-//  ============ 06 ======================
+///  ============ 06 ======================
 class Person {
-  constructor(public name: string, public age: number) {}
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
 }
 
 class Student extends Person {
-  constructor(name: string, age: number, public grade: string) {
+  grade: string;
+
+  constructor(name: string, age: number, grade: string) {
     super(name, age);
+    this.grade = grade;
   }
 
   getDetails(): string {
     return `Name: ${this.name}, Age: ${this.age}, Grade: ${this.grade}`;
   }
 }
-
 //  ============ 07 ======================
 function getIntersection(arr1: number[], arr2: number[]): number[] {
   return arr1.filter((num) => arr2.includes(num));
 }
+
